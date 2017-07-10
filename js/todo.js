@@ -12,16 +12,57 @@ window.onload = function() {
   var doneButton = document.getElementById('done-button');
   doneButton.addEventListener('click', markAsDone, false);
 
+  var undoneButton = document.getElementById('undone-button');
+  undoneButton.addEventListener('click', markUndone, false);
+    
+  var removeDoneButton = document.getElementById('remove-done');
+  removeDoneButton.addEventListener('click', removeDone, false);
+    
+  var removeAllButton = document.getElementById('remove-all');
+  removeAllButton.addEventListener('click', removeAll, false);
+
   
 
   function addToDoItem() {
-    
+      event.preventDefault();
+      var newTask = document.getElementById('task');
+      var whatToDo = document.getElementById('toDo');
+      var newOption = document.createElement('option');
+      newOption.innerText = newTask.value;
+      whatToDo.appendChild(newOption);
+      document.getElementById("task").value = "";
   }
 
   function markAsDone() {
-    
+    var seleccion = document.getElementById('toDo');
+        var taskDone = seleccion.options[seleccion.selectedIndex].value;
+    seleccion.options[seleccion.selectedIndex].remove();
+    var itsDone = document.getElementById('done');
+    var newOption = document.createElement('option');
+    newOption.innerText = taskDone;
+    itsDone.appendChild(newOption); 
+  }  
+ function markUndone() {
+    var seleccion = document.getElementById('done');
+        var taskDone = seleccion.options[seleccion.selectedIndex].value;
+    seleccion.options[seleccion.selectedIndex].remove();
+    var itsDone = document.getElementById('toDo');
+    var newOption = document.createElement('option');
+    newOption.innerText = taskDone;
+    itsDone.appendChild(newOption); 
+  }  
+function removeDone() {
+    var seleccion = document.getElementById('done');
+    seleccion.innerHTML = '';
+  }  
+function removeAll() {
+    var selecDone = document.getElementById('done');
+    var selecToDo = document.getElementById('toDo');
+    selecDone.innerHTML = '';
+    selecToDo.innerHTML = '';
   }  
 }
+
 
 
 

@@ -30,25 +30,26 @@ h1 {
   width: 80%;
 }
 
-#save-button {
+/*#save-button {
   background-color: #32B12A;
   width: 15%;
   border-radius: 5px;
   border-style: none;
-}
+  display: inline-flex;
+}*/
 
 .liked {
   background-color: #3C99FF !important;
 }
 
-#done-button {
+/*#done-button {
   background-color: #3489B1;
   width: 15%;
   border-radius: 5px;
   border-style: none;
   height: 35px;
   font-size: 16px;
-}
+}*/
 
 li {
   margin: 10px 0;
@@ -57,4 +58,15 @@ li {
 
 .done {
   text-decoration: line-through;
+}
+
+.mainContent, .form-control{
+    border: 2px solid black;
+    height: 300px;
+}
+
+.mainContent{
+    align-content: center;
+    height: 600px;
+    font-size: 20px;
 }

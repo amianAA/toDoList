@@ -3,10 +3,51 @@
   <head>
     <title>To-Do List</title>
     <meta charset="utf-8"/>
-    
-    
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/todo.js"></script>
   </head>
   <body>
-    
+    <div class="container-fluid mainContent">
+        <div class="row justify-content-center">
+            <p>THE TO-DO LIST</p>
+        </div>
+        <div class="row addNewTask justify-content-center b-2">
+                <form>
+                    <div>
+                        <label for="task">ADD NEW TASK:</label>
+                        <input type="text" id="task"/>
+                        <button id="save-button">ADD</button>
+                    </div>
+                </form>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-4 toDo text-center">
+                <label>TO DO</label>
+                <select multiple class="form-control" id="toDo">
+                <option>Buy fruit</option>
+                <option>Wash car</option>
+                <option>Call Mum</option>
+                <option>Go to the Gym</option>
+              </select>
+              <button class="markAsDone m-2" id="done-button">MARK AS DONE</button>
+            </div>
+            <div class="col-4 isDone text-center">
+                <label>DONE</label>
+                <select multiple class="form-control done" id="done">
+                <option>Call Cousin</option>
+                <option>Fuck</option>
+                <option>Smoke weed</option>
+              </select>
+              <button class="markUndone m-2" id="undone-button">MARK AS UNDONE</button>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <button id="remove-done">REMOVE DONE TASKS</button>
+        </div>
+        <div class="row m-2 justify-content-center">
+            <button id="remove-all">REMOVE ALL</button>
+        </div>
+    </div>
   </body>
 </html>
