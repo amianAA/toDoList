@@ -1,4 +1,3 @@
-
 window.onload = function() {
 
 // the following code adds event listeners to the buttons
@@ -25,17 +24,19 @@ window.onload = function() {
 
   function addToDoItem() {
       event.preventDefault();
-      var newTask = document.getElementById('task');
-      var whatToDo = document.getElementById('toDo');
-      var newOption = document.createElement('option');
-      newOption.innerText = newTask.value;
-      whatToDo.appendChild(newOption);
-      document.getElementById("task").value = "";
+      var newTask = document.getElementById('task'); //Apunta al formulario
+      var whatToDo = document.getElementById('toDo'); //Apunta a la lista de tareas para hacer
+      var newOption = document.createElement('option'); //Crea elemento <option></option>
+      if (newTask.trim() != "") { //Si en el formulario hay algun dato:
+        newOption.innerText = newTask.value; //lo mete dentro de <option> (<option>dato</option>)
+        whatToDo.appendChild(newOption); //Mete el <option> con el dato en la lista
+        }
+      document.getElementById("task").value = ""; //Actualiza el formulario para dejarlo en blanco
   }
 
   function markAsDone() {
     var seleccion = document.getElementById('toDo');
-        var taskDone = seleccion.options[seleccion.selectedIndex].value;
+    var taskDone = seleccion.options[seleccion.selectedIndex].value;
     seleccion.options[seleccion.selectedIndex].remove();
     var itsDone = document.getElementById('done');
     var newOption = document.createElement('option');
@@ -44,7 +45,7 @@ window.onload = function() {
   }  
  function markUndone() {
     var seleccion = document.getElementById('done');
-        var taskDone = seleccion.options[seleccion.selectedIndex].value;
+    var taskDone = seleccion.options[seleccion.selectedIndex].value;
     seleccion.options[seleccion.selectedIndex].remove();
     var itsDone = document.getElementById('toDo');
     var newOption = document.createElement('option');
